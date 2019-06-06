@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+
+/*** VARIABLES ***/
+$main-blue: #40acf1;
+$transparent-blue: rgba(64, 172, 241, 0.7);
+$main-white: #fff;
+$main-black: #292f36;
+$main-grey: rgb(216, 214, 214);
+$main-yellow: #e3b505;
+
+/*** RESETS ***/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*** MAIN BODY STYLES ***/
+body {
+  font-family: 'Roboto', sans-serif;
+  color: $main-black;
+  background: $main-white;
+}
+
+/*** SECTION TITLE STYLES ***/
+.section-title-special {
+  background: $transparent-blue;
+  color: $main-white;
+  padding: 0.5rem 2rem;
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+}
+
+/*** PRE-LOADER STYLES ***/
+.preloader {
+  // Makes sure this element is not in the flow of the DOM.
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: $main-white;
+  z-index: 999;
+}
+
+.hide-preloader {
+  display: none !important;
+}
+
+/*** GLOBAL MIXINs ***/
+@mixin easeIn {
+  transition: all 0.5s ease-in;
+
+  /* Longer notation of line above */
+  // transition-property: color;
+  // transition-duration: .5s;
+  // transition-timing-function: ease-in;
+}
+
+@mixin easeInOut {
+  transition: all 1s ease-in-out;
+}
+
+@mixin ease {
+  transition: all 0.5s ease-in-out;
+}
+
+@mixin easeIntoImage {
+  transition: all 0.5s linear;
+}

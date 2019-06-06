@@ -1,0 +1,189 @@
+@import 'config';
+
+/***** NAVBAR SECTION *****/
+.navbar {
+  background: $main-white;
+
+  .navbar-brand img {
+    width: 50px;
+  }
+
+  .navbar-icon {
+    font-size: 2rem;
+    color: $main-blue;
+  }
+
+  .navbar-toggler {
+    // Need the word important because we are overriding a bootstrap class
+    outline-color: $main-blue !important;
+  }
+
+  .nav-link {
+    color: $main-black;
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 1.3rem;
+    @include easeIn;
+
+    &:hover {
+      color: $main-blue;
+      padding-left: 5px;
+    }
+  }
+
+  .nav-icon {
+    font-size: 1.5rem;
+    color: $main-blue;
+    text-decoration: none;
+    @include easeIn;
+
+    &:hover {
+      color: $main-black;
+    }
+  }
+}
+
+/***** HEADER SECTION *****/
+.header {
+  color: $main-white;
+
+  clip-path: polygon(0 0, 100% 0, 100% 95%, 50% 100%, 0 95%);
+
+  overflow: hidden;
+
+  .height-max {
+    min-height: calc(100vh - 76px);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+      url('/images/banner.jpg');
+    background-position: center;
+    background-size: cover;
+
+    // Creates a parallax effect
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+    // This is calling a keyframe defined below called 'zoom'
+    animation: zoom;
+    animation-duration: 10s;
+    animation-delay: 5s;
+    animation-iteration-count: infinite;
+  }
+
+  .title-heading {
+    background: rgba(0, 0, 0, 0.4);
+    border-left: 0.3rem solid $main-yellow;
+  }
+
+  .title {
+    font-weight: 700;
+    font-size: 1.9rem;
+  }
+
+  .title-icon {
+    color: $main-yellow;
+    text-decoration: none !important;
+
+    &:hover {
+      color: $main-yellow;
+      opacity: 0.6;
+    }
+  }
+}
+
+/***** SKILLS SECTION *****/
+.skills-icon {
+  font-size: 3rem;
+  color: $main-yellow;
+  background: $main-grey;
+
+  &:hover {
+    color: $main-blue;
+  }
+}
+
+.skills-underline {
+  width: 6rem;
+  height: 0.2rem;
+  background: $main-blue;
+  margin: 1rem auto;
+}
+
+/***** INVENTORY SECTION *****/
+.inventory {
+  background: $main-grey;
+
+  .car-card {
+    border-radius: 0 !important;
+
+    .car-img {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+
+  .car-value {
+    background: $main-blue;
+    color: $main-white;
+    clip-path: polygon(15% 0, 85% 0, 100% 100%, 0 100%);
+    // clip-path: circle(50%);
+    // clip-path: ellipse(50% 50% at 50% 50%);
+    @include easeInOut;
+
+    &:hover {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      // clip-path: ellipse(100 100 at 0 0);
+    }
+  }
+}
+
+/***** QUESTION SECTION *****/
+.question {
+  background: url('/images/question-banner.jpg') center/cover fixed no-repeat;
+
+  .question-grey {
+    background: rgba(79, 109, 122, 0.75);
+  }
+
+  .question-yellow {
+    background: rgba(227, 181, 5, 0.75);
+  }
+
+  .question-icon {
+    font-size: 4rem;
+    color: $main-blue;
+    @include ease;
+
+    &:hover {
+      transform: translateY(-10%);
+      color: $main-blue;
+    }
+  }
+
+  .question-info {
+    color: $main-white;
+  }
+}
+
+/***** FEATURED CARS SECTION *****/
+
+/***** MEDIA QUERIES *****/
+@media (min-width: 768px) {
+  .header .title {
+    font-size: 3rem;
+  }
+}
+
+/***** KEYFRAMES *****/
+@keyframes zoom {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2) translateX(-5%);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
